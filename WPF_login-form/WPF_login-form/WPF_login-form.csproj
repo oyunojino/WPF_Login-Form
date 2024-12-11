@@ -10,14 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\Backgrounds\emoji-background.png" />
-    <None Remove="Images\Logo\icon.ico" />
-    <None Remove="Images\Logo\logo-small.png" />
-    <None Remove="Images\Logo\logo.png" />
-    <None Remove="Images\Samples\rusty.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Images\Backgrounds\emoji-background.png" />
     <Resource Include="Images\Logo\icon.ico" />
     <Resource Include="Images\Logo\logo-small.png" />

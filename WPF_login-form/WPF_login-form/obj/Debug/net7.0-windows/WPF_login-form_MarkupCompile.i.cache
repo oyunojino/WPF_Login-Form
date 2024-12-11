@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\App.xaml
-11407045341
+5-1857543268
 
 6-1611009473
 1981398302514
-MainWindow.xaml;
+MainWindow.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;
 
 False
 
