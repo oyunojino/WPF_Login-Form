@@ -5,9 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_login_form"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="900" Width="600 "
         WindowStyle="None">
-    <Grid>
+    <Border>
+        <Grid>
+            <Border/>
+            <Border/>
+            <Border/>
+            
+            <!-- ######## -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-    </Grid>
+                <!--1번 줄 : 상태바-->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--1번줄 1번칸-->
+                    <Button Grid.Column="0"
+                            Style="{StaticResource SystemIconButton}">
+                        <Image Source="/Images/Logo/logo-small.png"/>
+                    </Button>
+                    <!--1번줄 2번칸-->
+                    <Viewbox Grid.Column="0"
+                             Grid.ColumnSpan="3"
+                             Margin="5">
+                        <StackPanel>
+                            <TextBlock FontFamily="{StaticResource LatoBold}"
+                                       FontSize="{StaticResource FontSizeLarge}"
+                                       Margin="0 0 0 -5">
+                                <Run Text="W" Foreground="{StaticResource WordOrangeBrush}"/>
+                                <Run Text="O" Foreground="{StaticResource WordBlueBrush}"/>
+                                <Run Text="R" Foreground="{StaticResource WordRedBrush}"/>
+                                <Run Text="D" Foreground="{StaticResource WordGreenBrush}"/>
+                            </TextBlock>
+                            <TextBlock Text="by fastto"
+                                       TextAlignment="Center"
+                                       Foreground="{StaticResource WordDarkBlueBrush}"/>
+                        </StackPanel>
+                    </Viewbox>
+                    <!--1번줄 3번칸-->
+                    <StackPanel Grid.Column="2"
+                                Orientation="Horizontal">
+                        <Button Content="_" Style="{StaticResource WindowControlButton}"/>
+                        <Button Content="[ ]" Style="{StaticResource WindowControlButton}"/>
+                        <Button Content="X" Style="{StaticResource WindowControlButton}"/>
+                    </StackPanel>
+                </Grid>
+                
+                <!--2번 줄 : 알림창-->
+                <Border Grid.Row="1">
+                    
+                </Border>
+                
+                <!--3번 줄 : 로그인창-->
+                <Border Grid.Row="2">
+
+                </Border>
+                
+            </Grid>
+        </Grid>
+    </Border>
 </Window>
