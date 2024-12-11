@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPF_login-form")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41a272008ac8e9316ef51dd93da10ef3cd5032b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07d711d900f09403cbbc4a5fac5ab1acbbeef5af")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPF_login-form")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPF_login-form")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
