@@ -1,0 +1,8 @@
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\App.g.cs
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\WPF_login-form_MarkupCompile.cache
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\WPF_login-form_MarkupCompile.lref
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\WPF_login-form.dll
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\refint\WPF_login-form.dll
+C:\code\test\WPF_Tutorials\WPF_login-form\WPF_login-form\obj\Debug\net7.0-windows\WPF_login-form.pdb
