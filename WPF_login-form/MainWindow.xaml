@@ -5,16 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_login_form"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="600 "
-        WindowStyle="None">
+        Title="MainWindow" Height="600" Width="900"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        x:Name="AppWindow"
+        Icon="Images/Logo/logo-small.png">
     <Border>
         <Grid>
-            <Border/>
-            <Border/>
-            <Border/>
+            <Border Panel.ZIndex="2"
+                    BorderThickness="3"
+                    CornerRadius="10"
+                    BorderBrush="{StaticResource WordOrangeBrush}"/>
+            <Border x:Name="Container"
+                    Background="{StaticResource BackgroundLightBrush}"
+                    CornerRadius="10"/>
+            <Border Background="{StaticResource BackgroundLightBrush}"
+                    CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0.5" Opacity="0.2"/>
+                </Border.Effect>
+            </Border>
             
             <!-- ######## -->
             <Grid>
+                <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=Container}"/>
+                </Grid.OpacityMask>
+                    
                 <Grid.RowDefinitions>
                     <RowDefinition Height="42"/>
                     <RowDefinition Height="auto"/>
