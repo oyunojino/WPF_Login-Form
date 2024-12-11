@@ -74,8 +74,9 @@
                 </Border>
                 
                 <!--3번 줄 : 로그인창-->
-                <Border Grid.Row="2">
-                    
+                <Border Grid.Row="2"
+                        ClipToBounds="True">
+                    <ContentPresenter Content="ddd"/>
                 </Border>
                 
             </Grid>
