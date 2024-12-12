@@ -75,9 +75,9 @@
                     <!--1번줄 3번칸-->
                     <StackPanel Grid.Column="2"
                     Orientation="Horizontal">
-                        <Button Content="_" Style="{StaticResource WindowControlButton}"/>
-                        <Button Content="[ ]" Style="{StaticResource WindowControlButton}"/>
-                        <Button Content="X" Style="{StaticResource WindowControlButton}"/>
+                        <Button Content="_" Style="{StaticResource WindowControlButton}" Command="{Binding MinimizeCommand}"/>
+                        <Button Content="[ ]" Style="{StaticResource WindowControlButton}" Command="{Binding MaximizeCommand}"/>
+                        <Button Content="X" Style="{StaticResource WindowControlButton}" Command="{Binding CloseCommand}"/>
                     </StackPanel>
                 </Grid>
 

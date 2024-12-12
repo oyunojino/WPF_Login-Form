@@ -11,7 +11,13 @@ public class MenuViewModel
     private Window _window;
     private WindowResizer _windowResizer;
 
-    public ICommand Menu1Command { get; }
+    public ICommand Menu1Command { get; set; }
+
+    public ICommand MinimizeCommand { get; set; }
+
+    public ICommand MaximizeCommand { get; set; }
+
+    public ICommand CloseCommand { get; set; }
 
     public MenuViewModel(Window window)
     {
@@ -22,6 +28,9 @@ public class MenuViewModel
 
         //Menu1Command = new RelayCommand(OnMenuCommandExcuted);
         Menu1Command = new RelayCommand(() => SystemCommands.ShowSystemMenu(_window, GetMousePosition()));
+        MinimizeCommand = new RelayCommand(() => _window.WindowState = WindowState.Minimized);
+        MaximizeCommand = new RelayCommand(() => _window.WindowState = WindowState.Maximized);
+        CloseCommand = new RelayCommand(() => _window.Close());
     }
 
     private void OnMenuCommandExcuted()
