@@ -13,16 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_login_form.Pages
+namespace WPF_login_form.Pages;
+
+/// <summary>
+/// LoginPage.xaml에 대한 상호 작용 논리
+/// </summary>
+public partial class LoginPage : Page
 {
-    /// <summary>
-    /// LoginPage.xaml에 대한 상호 작용 논리
-    /// </summary>
-    public partial class LoginPage : Page
+    public LoginPage()
     {
-        public LoginPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
