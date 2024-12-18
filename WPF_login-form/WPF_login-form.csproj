@@ -25,4 +25,8 @@
     <Resource Include="Images\Samples\rusty.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ValueConverters\" />
+  </ItemGroup>
+
 </Project>

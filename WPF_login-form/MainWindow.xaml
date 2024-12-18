@@ -12,114 +12,108 @@
         x:Name="AppWindow"
         Icon="Images/Logo/logo-small.png">
 
-    <Border>
-        <Grid>
-            <Border Panel.ZIndex="2"
-             BorderThickness="3"
-             CornerRadius="10"
-             BorderBrush="{StaticResource WordOrangeBrush}"/>
-            <Border x:Name="Container"
-             Background="{StaticResource BackgroundLightBrush}"
-             CornerRadius="10"/>
-            <Border Background="{StaticResource BackgroundLightBrush}"
-             CornerRadius="10">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="0.5" Opacity="0.2"/>
-                </Border.Effect>
-            </Border>
-
-            <!-- ######## -->
-            <Grid>
-                <Grid.OpacityMask>
-                    <VisualBrush Visual="{Binding ElementName=Container}"/>
-                </Grid.OpacityMask>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="42"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <!--1번 줄 : 상태바-->
-                <Grid Grid.Row="0"
-                Panel.ZIndex="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <!--1번줄 1번칸-->
-                    <Button Grid.Column="0"
-                    Style="{StaticResource SystemIconButton}" Command="{Binding Menu1Command}">
-                        <Image Source="/Images/Logo/logo-small.png"/>
-                    </Button>
-                    <!--1번줄 2번칸-->
-                    <Viewbox Grid.Column="0"
-                  Grid.ColumnSpan="3"
-                  Margin="5">
-                        <StackPanel>
-                            <TextBlock FontFamily="{StaticResource LatoBold}"
-                                FontSize="{StaticResource FontSizeLarge}"
-                                Margin="0 0 0 -5">
-                             <Run Text="W" Foreground="{StaticResource WordOrangeBrush}"/>
-                             <Run Text="O" Foreground="{StaticResource WordBlueBrush}"/>
-                             <Run Text="R" Foreground="{StaticResource WordRedBrush}"/>
-                             <Run Text="D" Foreground="{StaticResource WordGreenBrush}"/>
-                            </TextBlock>
-                            <TextBlock Text="by fastto"
-                            TextAlignment="Center"
-                            Foreground="{StaticResource WordDarkBlueBrush}"/>
-                        </StackPanel>
-                    </Viewbox>
-                    <!--1번줄 3번칸-->
-                    <StackPanel Grid.Column="2"
-                    Orientation="Horizontal">
-                        <Button Content="_" Style="{StaticResource WindowControlButton}" Command="{Binding MinimizeCommand}"/>
-                        <Button Content="[ ]" Style="{StaticResource WindowControlButton}" Command="{Binding MaximizeCommand}"/>
-                        <Button Content="X" Style="{StaticResource WindowControlButton}" Command="{Binding CloseCommand}"/>
-                    </StackPanel>
-                </Grid>
-
-                <!--2번 줄 : 알림창-->
-                <Border Grid.Row="1"
-                 Panel.ZIndex="1"
-                 Padding="10">
-                    <Label FontFamily="{StaticResource LatoBold}"
-                    Foreground="{StaticResource ForegroundLightBrush}"
-                    HorizontalAlignment="Center">
-                        No Internet Connection. Please check your network.
-                    </Label>
-                </Border>
-
-                <!--3번 줄 : 로그인창-->
-                <Border Grid.Row="2"
-                ClipToBounds="True">
-                    <ContentPresenter Content="ddd"/>
-                </Border>
-
-            </Grid>
-        </Grid>
-    </Border>
-
-    <!--<Window.Resources>
+    <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
-                        
+                        <Border>
+                            <Grid>
+                                <Border Panel.ZIndex="2"
+                                     BorderThickness="3"
+                                     CornerRadius="10"
+                                     BorderBrush="{StaticResource WordOrangeBrush}"/>
+
+                                <Border x:Name="Container"
+                                     Background="{StaticResource BackgroundLightBrush}"
+                                     CornerRadius="10"/>
+
+                                <Border Background="{StaticResource BackgroundLightBrush}"
+                                    CornerRadius="10">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0.5" Opacity="0.2"/>
+                                    </Border.Effect>
+                                </Border>
+
+                                <!--########-->
+                                <Grid>
+                                    <Grid.OpacityMask>
+                                        <VisualBrush Visual="{Binding ElementName=Container}"/>
+                                    </Grid.OpacityMask>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="42"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <!--1번 줄 : 상태바-->
+                                    <Grid Grid.Row="0" Panel.ZIndex="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!--1번줄 1번칸-->
+                                        <Button Grid.Column="0"
+                                            Style="{StaticResource SystemIconButton}" Command="{Binding Menu1Command}">
+                                            <Image Source="/Images/Logo/logo-small.png"/>
+                                        </Button>
+
+                                        <!--1번줄 2번칸-->
+                                        <Viewbox Grid.Column="0"
+                                              Grid.ColumnSpan="3"
+                                              Margin="5">
+                                            <StackPanel>
+                                                <TextBlock FontFamily="{StaticResource LatoBold}"
+                            FontSize="{StaticResource FontSizeLarge}"
+                            Margin="0 0 0 -5">
+                         <Run Text="W" Foreground="{StaticResource WordOrangeBrush}"/>
+                         <Run Text="O" Foreground="{StaticResource WordBlueBrush}"/>
+                         <Run Text="R" Foreground="{StaticResource WordRedBrush}"/>
+                         <Run Text="D" Foreground="{StaticResource WordGreenBrush}"/>
+                                                </TextBlock>
+                                                <TextBlock Text="by fastto"
+                                                    TextAlignment="Center"
+                                                    Foreground="{StaticResource WordDarkBlueBrush}"/>
+                                            </StackPanel>
+                                        </Viewbox>
+
+                                        <!--1번줄 3번칸-->
+                                        <StackPanel Grid.Column="2"
+                                                Orientation="Horizontal">
+                                            <Button Content="_" Style="{StaticResource WindowControlButton}" Command="{Binding MinimizeCommand}"/>
+                                            <Button Content="[ ]" Style="{StaticResource WindowControlButton}" Command="{Binding MaximizeCommand}"/>
+                                            <Button Content="X" Style="{StaticResource WindowControlButton}" Command="{Binding CloseCommand}"/>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <!--2번 줄 : 알림창-->
+                                    <Border Grid.Row="1"
+                                         Panel.ZIndex="1"
+                                         Padding="10">
+                                        <Label FontFamily="{StaticResource LatoBold}"
+                                            Foreground="{StaticResource ForegroundLightBrush}"
+                                            HorizontalAlignment="Center">
+                                            No Internet Connection. Please check your network.
+                                        </Label>
+                                    </Border>
+
+                                    <!--3번 줄 : 로그인창-->
+                                    <Border Grid.Row="2"
+                                            ClipToBounds="True">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </Border>
+
+                                </Grid>
+                            </Grid>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Window.Resources>
-
-    <WindowChrome.WindowChrome>
-        <WindowChrome ResizeBorderThickness="5"
-                      CaptionHeight="15"
-                      CornerRadius="0"
-                      GlassFrameThickness="0" />
-    </WindowChrome.WindowChrome>
 
     <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
@@ -129,16 +123,17 @@
             </Grid.ColumnDefinitions>
 
             <Grid.Background>
-                <ImageBrush TileMode="Tile"
-                            ViewportUnits="Absolute"
-                            Viewport="0 0 500 500"
+                <ImageBrush TileMode="Tile" 
+                            ViewportUnits="Absolute" 
+                            Viewport="0,0,500,500"
                             ImageSource="/Images/Backgrounds/emoji-background.png" />
             </Grid.Background>
 
-            <Frame Grid.ColumnSpan="2"
+            <Frame Grid.Column="1"
+                   NavigationUIVisibility="Hidden"
                    x:Name="MainFrame"
-                   Content="{Binding CurrentPage}"/>
+                   Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
         </Grid>
-    </Border>-->
-    
+    </Border>
+
 </Window>
