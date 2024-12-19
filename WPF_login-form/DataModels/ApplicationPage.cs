@@ -1,4 +1,4 @@
-﻿namespace WPF_login_form.Word.Core;
+﻿namespace WPF_login_form.Core;
 
 /// <summary>
 /// A page of the application

@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using WPF_login_form.Core;
 using WPF_login_form.Pages;
 using WPF_login_form.Word.Core;
 

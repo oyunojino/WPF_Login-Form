@@ -1,11 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.ComponentModel.Design;
 using System.Windows;
-using System.Windows.Automation;
 using System.Windows.Input;
+using WPF_login_form.Core;
 using WPF_login_form.Word;
-using WPF_login_form.Word.Core;
 
 namespace WPF_login_form;
 
@@ -21,7 +19,7 @@ public partial class MenuViewModel : ObservableObject
 
     public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
 
-    public Thickness InnerContentPadding { get; set; } = new Thickness(0);
+    //public Thickness InnerContentPadding { get; set; } = new Thickness(0);
 
     #region #window 테두리
     private int _windowRadius = 10;
@@ -58,6 +56,7 @@ public partial class MenuViewModel : ObservableObject
 
     // # 창이 현재 화면의 모서리에 도킹 되었는지 또는 자유롭게 위치할 수 있는지 나타내는 필드
     private WindowDockPosition _dockPosition = WindowDockPosition.Undocked;
+    internal ApplicationPage CurrentPage;
 
     // # 창이 최대화 상태이거나 도킹된 경우 true / 그 외에 false
     public bool Borderless => (_window.WindowState == WindowState.Maximized || _dockPosition != WindowDockPosition.Undocked);
