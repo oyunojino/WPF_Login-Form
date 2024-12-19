@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.ComponentModel.Design;
 using System.Windows;
 using System.Windows.Automation;
@@ -8,12 +9,32 @@ using WPF_login_form.Word.Core;
 
 namespace WPF_login_form;
 
-public class MenuViewModel
+public partial class MenuViewModel : ObservableObject
 {
     private Window _window;
     private WindowResizer _windowResizer;
 
+    [ObservableProperty]
+    private bool _beingMoved;
+
     public ApplicationPage _currentPage = ApplicationPage.Login;
+
+    public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
+
+    #region #window 테두리
+    private int _windowRadius = 10;
+
+    public int WindowRadius
+    {
+        // If it is maximized or docked, no border
+        get => Borderless ? 0 : _windowRadius;
+        set => _windowRadius = value;
+    }
+    public CornerRadius WindowCornerRadius => new CornerRadius(WindowRadius);
+
+    public int FlatBorderThickness => Borderless && _window.WindowState != WindowState.Maximized ? 1 : 0;
+
+    #endregion
 
     #region # Commands
     public ICommand Menu1Command { get; set; }

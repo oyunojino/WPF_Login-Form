@@ -18,19 +18,21 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
-                        <Border>
+                        <Border BorderThickness="{Binding FlatBorderThickness}" 
+                                Padding="{Binding OuterMarginSize, FallbackValue=0}"
+                                BorderBrush="{StaticResource ForegroundDarkBrush}">
                             <Grid>
                                 <Border Panel.ZIndex="2"
-                                     BorderThickness="3"
-                                     CornerRadius="10"
+                                     BorderThickness="{Binding BeingMoved, Converter={local:BooleanToBorderThicknessConverter}}"
+                                     CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
                                      BorderBrush="{StaticResource WordOrangeBrush}"/>
 
                                 <Border x:Name="Container"
                                      Background="{StaticResource BackgroundLightBrush}"
-                                     CornerRadius="10"/>
+                                     CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"/>
 
-                                <Border Background="{StaticResource BackgroundLightBrush}"
-                                    CornerRadius="10">
+                                <Border Background="{StaticResource ForegroundLightBrush}"
+                                    CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="0.5" Opacity="0.2"/>
                                     </Border.Effect>
@@ -43,7 +45,7 @@
                                     </Grid.OpacityMask>
 
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="42"/>
+                                        <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}"/>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
