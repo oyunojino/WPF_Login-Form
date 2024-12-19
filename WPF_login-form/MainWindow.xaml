@@ -115,6 +115,14 @@
         </Style>
     </Window.Resources>
 
+    <WindowChrome.WindowChrome>
+        <!--창 크기 조절: ResizeBorderThickness/CaptionHeight-->
+        <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
+                      CaptionHeight="{Binding TitleHeight}"
+                      CornerRadius="0"
+                      GlassFrameThickness="0" />
+    </WindowChrome.WindowChrome>
+
     <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
