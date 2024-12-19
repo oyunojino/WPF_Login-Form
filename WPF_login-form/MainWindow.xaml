@@ -10,7 +10,8 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         x:Name="AppWindow"
-        Icon="Images/Logo/logo-small.png">
+        Icon="Images/Logo/logo-small.png"
+        MinHeight="300" MinWidth="300">
 
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">

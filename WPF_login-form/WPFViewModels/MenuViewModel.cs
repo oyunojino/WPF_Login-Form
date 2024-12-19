@@ -13,6 +13,8 @@ public class MenuViewModel
     private Window _window;
     private WindowResizer _windowResizer;
 
+    public ApplicationPage _currentPage = ApplicationPage.Login;
+
     #region # Commands
     public ICommand Menu1Command { get; set; }
 
@@ -22,9 +24,6 @@ public class MenuViewModel
 
     public ICommand CloseCommand { get; set; }
     #endregion
-
-
-    public ApplicationPage _currentPage = ApplicationPage.Login;
 
     #region #window size / move
 
