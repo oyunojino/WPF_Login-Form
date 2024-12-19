@@ -21,6 +21,8 @@ public partial class MenuViewModel : ObservableObject
 
     public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
 
+    public Thickness InnerContentPadding { get; set; } = new Thickness(0);
+
     #region #window 테두리
     private int _windowRadius = 10;
 

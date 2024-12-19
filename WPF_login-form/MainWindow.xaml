@@ -70,12 +70,12 @@
                                               Margin="5">
                                             <StackPanel>
                                                 <TextBlock FontFamily="{StaticResource LatoBold}"
-                            FontSize="{StaticResource FontSizeLarge}"
-                            Margin="0 0 0 -5">
-                         <Run Text="W" Foreground="{StaticResource WordOrangeBrush}"/>
-                         <Run Text="O" Foreground="{StaticResource WordBlueBrush}"/>
-                         <Run Text="R" Foreground="{StaticResource WordRedBrush}"/>
-                         <Run Text="D" Foreground="{StaticResource WordGreenBrush}"/>
+                                                        FontSize="{StaticResource FontSizeLarge}"
+                                                        Margin="0 0 0 -5">
+                                                     <Run Text="W" Foreground="{StaticResource WordOrangeBrush}"/>
+                                                     <Run Text="O" Foreground="{StaticResource WordBlueBrush}"/>
+                                                     <Run Text="R" Foreground="{StaticResource WordRedBrush}"/>
+                                                     <Run Text="D" Foreground="{StaticResource WordGreenBrush}"/>
                                                 </TextBlock>
                                                 <TextBlock Text="by fastto"
                                                     TextAlignment="Center"
@@ -93,9 +93,10 @@
                                     </Grid>
 
                                     <!--2번 줄 : 알림창-->
-                                    <Border Grid.Row="1"
-                                         Panel.ZIndex="1"
-                                         Padding="10">
+                                    <Border Grid.Row="1" Panel.ZIndex="1" Padding="10"
+                                           local:AnimateSlideInFromTopProperty.Value="{Binding ServerReachable,
+                                        Source={x:Static local:ViewModelLocator.Instance},
+                                        Converter={local:BooleanInvertConverter}}">
                                         <Label FontFamily="{StaticResource LatoBold}"
                                             Foreground="{StaticResource ForegroundLightBrush}"
                                             HorizontalAlignment="Center">
@@ -104,8 +105,8 @@
                                     </Border>
 
                                     <!--3번 줄 : 로그인창-->
-                                    <Border Grid.Row="2"
-                                            ClipToBounds="True">
+                                    <Border Grid.Row="2" ClipToBounds="True"
+                                            Padding="{Binding InnerContentPadding}">
                                         <ContentPresenter Content="{TemplateBinding Content}"/>
                                     </Border>
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WPF_login_form.Pages;
 
-namespace WPF_login_form.Word;
+namespace WPF_login_form;
 
 /// <summary>
 /// Locates view models from the IoC for use in binding in Xaml files
