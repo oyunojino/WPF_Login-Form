@@ -36,8 +36,8 @@
                     </StackPanel>
                 </Border>
                 <Button Style="{StaticResource TextButton}"
-                        Command="{Binding RegisterCommand}"
-                        Content="I alread have an account"
+                        Command="{Binding LoginCommand}"
+                        Content="Login"
                         HorizontalAlignment="Center"/>
             </StackPanel>
             

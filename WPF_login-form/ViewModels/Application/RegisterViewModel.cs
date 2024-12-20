@@ -35,7 +35,7 @@ public partial class RegisterViewModel : BaseViewModel
     [RelayCommand]
     private async Task OnLoginAsync(object parmeter)
     {
-        (App.Current.MainWindow.DataContext as WindowViewModel).CurrentPage = ApplicationPage.Login;
+        (App.Current.MainWindow.DataContext as MenuViewModel).CurrentPage = ApplicationPage.Login;
         await Task.Delay(1);
     }
 }

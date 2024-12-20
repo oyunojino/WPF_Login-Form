@@ -114,7 +114,6 @@ public partial class MenuViewModel : ObservableObject //ViewModelCore
 
     public MenuViewModel(Window window)
     {
-        CurrentPage = ApplicationPage.Register;
         _window = window;
 
         // ERROR : 초기화가 안되면 null로 리턴됨

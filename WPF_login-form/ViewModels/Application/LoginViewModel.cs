@@ -29,7 +29,7 @@ public partial class LoginViewModel : BaseViewModel
     [RelayCommand]
     private async Task OnRegisterAsync()
     {
-        (App.Current.MainWindow.DataContext as WindowViewModel).CurrentPage = ApplicationPage.Register;
+        (App.Current.MainWindow.DataContext as MenuViewModel).CurrentPage = ApplicationPage.Register;
         await Task.Delay(1);
     }
 

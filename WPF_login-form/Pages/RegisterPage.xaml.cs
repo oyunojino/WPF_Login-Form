@@ -23,5 +23,6 @@ public partial class RegisterPage : BasePage
     public RegisterPage()
     {
         InitializeComponent();
+        DataContext = new RegisterViewModel();
     }
 }

@@ -36,8 +36,9 @@
                     </StackPanel>
                 </Border>
                 <Button Style="{StaticResource TextButton}"
-                        Content="I alread have an account"
-                        HorizontalAlignment="Center"/>
+                        Content="Register"
+                        HorizontalAlignment="Center"
+                        Command="{Binding RegisterCommand}"/>
             </StackPanel>
             
         </ScrollViewer>
