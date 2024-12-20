@@ -8,15 +8,15 @@ public enum ApplicationPage
     /// <summary>
     /// The initial login page
     /// </summary>
-    Login = 0,
+    Login = 1,
 
     /// <summary>
     /// The main chat page
     /// </summary>
-    Chat = 1,
+    Chat = 2,
 
     /// <summary>
     /// The register page
     /// </summary>
-    Register = 2,
+    Register = 3,
 }
