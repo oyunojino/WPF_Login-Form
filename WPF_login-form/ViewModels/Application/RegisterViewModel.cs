@@ -1,13 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Serilog;
-using System.Windows.Controls;
-using System.Windows;
 using WPF_login_form.Core;
 
 namespace WPF_login_form;
 
-public partial class LoginViewModel : BaseViewModel
+public partial class RegisterViewModel : BaseViewModel
 {
     private readonly ILogger _logger;
 
@@ -21,28 +19,23 @@ public partial class LoginViewModel : BaseViewModel
     [ObservableProperty]
     private bool _loginIsRunning;
 
-    public LoginViewModel()
+    public RegisterViewModel()
     {
+        //Email = "choshinyoun@naver.com";
 
     }
 
     [RelayCommand]
     private async Task OnRegisterAsync()
     {
-        (App.Current.MainWindow.DataContext as WindowViewModel).CurrentPage = ApplicationPage.Register;
-        await Task.Delay(1);
+
     }
 
     // LoginCommand
     [RelayCommand]
     private async Task OnLoginAsync(object parmeter)
     {
-        await RunCommandAsync(() => LoginIsRunning, async () =>
-        {
-            var pass2 = (parmeter as IHavePassword).SecurePassword.Unsecure();
-            var email = Email;
-            //MessageBox.Show("1111");
-            await Task.Delay(3000);
-        });
+        (App.Current.MainWindow.DataContext as WindowViewModel).CurrentPage = ApplicationPage.Login;
+        await Task.Delay(1);
     }
 }
