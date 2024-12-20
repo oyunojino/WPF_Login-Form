@@ -1,7 +1,6 @@
 ﻿using System.Globalization;
 using WPF_login_form.Core;
 using WPF_login_form.Pages;
-using WPF_login_form.Word.Core;
 
 namespace WPF_login_form;
 
@@ -12,6 +11,8 @@ public class ApplicationPageValueConverter : BaseValueConverter<ApplicationPageV
         switch ((ApplicationPage)value)
         {
             case ApplicationPage.Login:
+                return new LoginPage();
+            case ApplicationPage.Register:
                 return new LoginPage();
             default:
                 return null;
