@@ -25,4 +25,10 @@
     <Resource Include="Images\Samples\rusty.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Pages\RegisterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

@@ -13,7 +13,7 @@ public class ApplicationPageValueConverter : BaseValueConverter<ApplicationPageV
             case ApplicationPage.Login:
                 return new LoginPage();
             case ApplicationPage.Register:
-                return new LoginPage();
+                return new RegisterPage();
             default:
                 return null;
         }

@@ -20,7 +20,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        //DataContext = new WindowViewModel(this);
+        DataContext = new WindowViewModel(this);
         DataContext = new MenuViewModel(this);
     }
 }
