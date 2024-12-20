@@ -23,7 +23,6 @@ public partial class LoginViewModel : BaseViewModel
 
     public LoginViewModel()
     {
-        //Email = "choshinyoun@naver.com";
 
     }
 

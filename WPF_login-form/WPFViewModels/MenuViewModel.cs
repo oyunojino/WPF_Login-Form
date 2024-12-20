@@ -15,11 +15,13 @@ public partial class MenuViewModel : ObservableObject
     [ObservableProperty]
     private bool _beingMoved;
 
+    //public ApplicationPage _currentPage = ApplicationPage.Login;
+
     public ApplicationPage _currentPage = ApplicationPage.Login;
 
     public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
 
-    //public Thickness InnerContentPadding { get; set; } = new Thickness(0);
+    public Thickness InnerContentPadding { get; set; } = new Thickness(0);
 
     #region #window 테두리
     private int _windowRadius = 10;
