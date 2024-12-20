@@ -7,21 +7,58 @@ using WPF_login_form.Word;
 
 namespace WPF_login_form;
 
-public partial class MenuViewModel : ObservableObject
+public partial class MenuViewModel : ObservableObject //ViewModelCore
 {
     private Window _window;
     private WindowResizer _windowResizer;
 
+
+    #region #INotifyPropertyChanged 버전
+    //private bool _beingMoved;
+    //public bool BeingMoved
+    //{
+    //    get { return _beingMoved; }
+    //    set
+    //    {
+    //        _beingMoved = value;
+    //        OnPropertyChanged();
+    //    }
+    //}
+
+    //public ApplicationPage _currentPage;
+    //public ApplicationPage CurrentPage
+    //{
+    //    get { return _currentPage; }
+    //    set
+    //    {
+    //        _currentPage = value;
+    //        OnPropertyChanged();
+    //    }
+    //}
+    #endregion
+
+
+    #region #ObservableObject 버전
     [ObservableProperty]
     private bool _beingMoved;
 
-    //public ApplicationPage _currentPage = ApplicationPage.Login;
-
+    [ObservableProperty]
     public ApplicationPage _currentPage = ApplicationPage.Login;
+    #endregion
+
 
     public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
 
     public Thickness InnerContentPadding { get; set; } = new Thickness(0);
+
+
+    #region #Commands
+    public ICommand Menu1Command { get; set; }
+    public ICommand MinimizeCommand { get; set; }
+    public ICommand MaximizeCommand { get; set; }
+    public ICommand CloseCommand { get; set; }
+    #endregion
+
 
     #region #window 테두리
     private int _windowRadius = 10;
@@ -38,15 +75,6 @@ public partial class MenuViewModel : ObservableObject
 
     #endregion
 
-    #region # Commands
-    public ICommand Menu1Command { get; set; }
-
-    public ICommand MinimizeCommand { get; set; }
-
-    public ICommand MaximizeCommand { get; set; }
-
-    public ICommand CloseCommand { get; set; }
-    #endregion
 
     #region #window size / move
 
@@ -58,7 +86,7 @@ public partial class MenuViewModel : ObservableObject
 
     // # 창이 현재 화면의 모서리에 도킹 되었는지 또는 자유롭게 위치할 수 있는지 나타내는 필드
     private WindowDockPosition _dockPosition = WindowDockPosition.Undocked;
-    internal ApplicationPage CurrentPage;
+
 
     // # 창이 최대화 상태이거나 도킹된 경우 true / 그 외에 false
     public bool Borderless => (_window.WindowState == WindowState.Maximized || _dockPosition != WindowDockPosition.Undocked);
@@ -83,8 +111,10 @@ public partial class MenuViewModel : ObservableObject
                                                                 OuterMarginSize.Bottom + ResizeBorder);
     #endregion
 
+
     public MenuViewModel(Window window)
     {
+        CurrentPage = ApplicationPage.Register;
         _window = window;
 
         // ERROR : 초기화가 안되면 null로 리턴됨
@@ -97,11 +127,6 @@ public partial class MenuViewModel : ObservableObject
         CloseCommand = new RelayCommand(() => _window.Close());
     }
 
-    private void OnMenuCommandExcuted()
-    {
-        //MessageBox.Show("menu button click");
-        SystemCommands.ShowSystemMenu(_window, GetMousePosition());
-    }
 
     private Point GetMousePosition()
     {
