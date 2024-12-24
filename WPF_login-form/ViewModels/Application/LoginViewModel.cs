@@ -11,10 +11,6 @@ public partial class LoginViewModel : BaseViewModel
 {
     private readonly ILogger _logger;
 
-
-    /// <summary>
-    /// The email of the user
-    /// </summary>
     [ObservableProperty]
     private string _email;
 

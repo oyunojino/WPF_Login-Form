@@ -1,6 +1,5 @@
 ﻿using System.Globalization;
 using WPF_login_form.Core;
-using WPF_login_form.Pages;
 
 namespace WPF_login_form;
 
