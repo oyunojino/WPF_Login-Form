@@ -19,13 +19,10 @@ namespace WPF_login_form;
 /// <summary>
 /// LoginPage.xaml에 대한 상호 작용 논리
 /// </summary>
-public partial class LoginPage : BasePage<LoginViewModel>, IHavePassword
+public partial class ChatPage : BasePage<LoginViewModel>
 {
-    public LoginPage()
+    public ChatPage()
     {
         InitializeComponent();
-        //DataContext = new LoginViewModel();
     }
-
-    public SecureString SecurePassword => PasswordText.SecurePassword;
 }
