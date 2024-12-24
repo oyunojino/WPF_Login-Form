@@ -1,4 +1,4 @@
-﻿<local:BasePage x:Class="WPF_login_form.Pages.LoginPage"
+﻿<local:BasePage x:TypeArguments="local:LoginViewModel" x:Class="WPF_login_form.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -29,10 +29,13 @@
                                    Foreground="{StaticResource ForegroundDarkBrush}"
                                    Margin="0 0 0 20"/>
                         <TextBox Tag="Email"/>
-                        <PasswordBox Tag="Password" Margin="0 0 0 30"/>
+                        <PasswordBox Tag="Password" Margin="0 0 0 30"
+                                     x:Name="PasswordText"/>
 
                         <Button Content="Next"
-                                HorizontalAlignment="Center"/>
+                                HorizontalAlignment="Center"
+                                Command="{Binding LoginCommand}"
+                                CommandParameter="{Binding ElementName=Page}"/>
                     </StackPanel>
                 </Border>
                 <Button Style="{StaticResource TextButton}"
